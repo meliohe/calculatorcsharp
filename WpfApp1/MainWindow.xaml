@@ -1,0 +1,53 @@
+﻿<fw:AcrylicWindow
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+        xmlns:HamburgerMenu="clr-namespace:HamburgerMenu;assembly=HamburgerMenu"          
+        xmlns:Controls="clr-namespace:Microsoft.Toolkit.Wpf.UI.Controls;assembly=Microsoft.Toolkit.Wpf.UI.Controls" x:Class="WpfApp1.MainWindow"          
+        mc:Ignorable="d"
+        Title="Calculator" Height="549.4" Width="326.5" AcrylicWindowStyle="NoIcon"
+        ResizeMode="NoResize">
+
+    <Grid fw:PointerTracker.Enabled="True" Background="#1fe0e0e0">
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+        <Button x:Name="button_equal" Content="=" HorizontalAlignment="Stretch" Margin="85,460,5,5" VerticalAlignment="Stretch" Style="{StaticResource ButtonRevealStyle}" Grid.Column="1" Background="#3F808080" />
+        <Button x:Name="button_dot" Content="." HorizontalAlignment="Stretch" Margin="5,460,85,5" VerticalAlignment="Stretch" Style="{StaticResource ButtonRevealStyle}" Grid.Column="1" />
+        <Button x:Name="button_zero" Content="0" HorizontalAlignment="Stretch" Margin="85,460,5,0" VerticalAlignment="Top" Style="{StaticResource ButtonRevealStyle}" Click="Button_zero_Click" FontWeight="Bold" FontSize="20" TextOptions.TextHintingMode="Animated" Height="55" />
+        <Button x:Name="button_negate" Content="negate" HorizontalAlignment="Stretch" Margin="5,460,85,5" VerticalAlignment="Stretch" Style="{StaticResource ButtonRevealStyle}" Click="Button_negate_Click" />
+        <Button x:Name="button_two" Content="2" HorizontalAlignment="Stretch" Margin="85,400,5,65" VerticalAlignment="Stretch" Style="{StaticResource ButtonRevealStyle}" FontWeight="Bold" FontSize="20" TextOptions.TextHintingMode="Animated" Click="Button_two_Click" />
+        <Button x:Name="button_one" Content="1" HorizontalAlignment="Stretch" Margin="5,400,85,65" VerticalAlignment="Stretch" Style="{StaticResource ButtonRevealStyle}" FontWeight="Bold" FontSize="20" TextOptions.TextHintingMode="Animated" Click="Button_one_Click" />
+        <Button x:Name="button_three" HorizontalAlignment="Stretch" Margin="5,400,85,65" VerticalAlignment="Stretch" Style="{StaticResource ButtonRevealStyle}" Grid.Column="1" Content="3" FontWeight="Bold" FontSize="20" TextOptions.TextHintingMode="Animated" Click="Button_three_Click" />
+        <Button x:Name="button_plus" Content="+" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonRevealStyle}" Grid.Column="1" Margin="85,400,5,65" Background="#3F808080" Click="Button_plus_Click" />
+        <Button x:Name="button_minus" Content="-" HorizontalAlignment="Stretch" Margin="85,340,5,125" VerticalAlignment="Stretch" Style="{StaticResource ButtonRevealStyle}" Grid.Column="1" Background="#3F808080" Click="Button_minus_Click" />
+        <Button x:Name="button_six" Content="6" HorizontalAlignment="Stretch" Margin="5,340,85,125" VerticalAlignment="Stretch" Style="{StaticResource ButtonRevealStyle}" Grid.Column="1" FontWeight="Bold" FontSize="20" TextOptions.TextHintingMode="Animated" Click="Button_six_Click" />
+        <Button x:Name="button_five" Content="5" HorizontalAlignment="Stretch" Margin="85,340,5,125" VerticalAlignment="Stretch" Style="{StaticResource ButtonRevealStyle}" FontWeight="Bold" FontSize="20" TextOptions.TextHintingMode="Animated" Click="Button_five_Click" />
+        <Button x:Name="button_four" Content="4" HorizontalAlignment="Stretch" Margin="5,340,85,125" VerticalAlignment="Stretch" Style="{StaticResource ButtonRevealStyle}" FontWeight="Bold" FontSize="20" TextOptions.TextHintingMode="Animated" Click="Button_four_Click" />
+        <Button x:Name="button_eight" Content="8" HorizontalAlignment="Stretch" Margin="85,280,5,185" VerticalAlignment="Stretch" Style="{StaticResource ButtonRevealStyle}" FontWeight="Bold" FontSize="20" TextOptions.TextHintingMode="Animated" Click="Button_eight_Click" />
+        <Button x:Name="button_seven" Content="7" HorizontalAlignment="Stretch" Margin="5,280,85,185" VerticalAlignment="Stretch" Style="{StaticResource ButtonRevealStyle}" FontWeight="Bold" FontSize="20" TextOptions.TextHintingMode="Animated" Click="Button_seven_Click" />
+        <Button x:Name="button_nine" HorizontalAlignment="Stretch" Margin="5,280,85,185" VerticalAlignment="Stretch" Style="{StaticResource ButtonRevealStyle}" Grid.Column="1" Content="9" FontWeight="Bold" FontSize="20" TextOptions.TextHintingMode="Animated" Click="Button_nine_Click"/>
+        <Button x:Name="button_multiply" Content="x" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonRevealStyle}" Grid.Column="1" Margin="85,280,5,185" Background="#3F808080"  />
+        <Label x:Name="readout" Content="0" HorizontalContentAlignment="Right" VerticalContentAlignment="center" HorizontalAlignment="Center" Margin="20,20,20,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="280" Height="80" FontSize="48" FontWeight="SemiBold"/>
+        <Button x:Name="backspace" Content="" HorizontalAlignment="Stretch" Margin="5,220,85,245" VerticalAlignment="Stretch" Style="{StaticResource ButtonRevealStyle}" FontWeight="Bold" FontSize="20" TextOptions.TextHintingMode="Animated" Grid.Column="1" Background="#3F808080" Click="Backspace_Click"/>
+        <Path Data="M20,10V14H11L14.5,17.5L12.08,19.92L4.16,12L12.08,4.08L14.5,6.5L11,10H20Z" Fill="#CC000000" Stretch="Fill" Margin="28.458,235.333,107.548,260.671" Grid.Column="1" RenderTransformOrigin="0.5,0.5" >
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.8" ScaleX="0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Label x:Name="buffer" Content="" HorizontalAlignment="Center" Margin="20,100,20,0" VerticalContentAlignment ="Center" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="280" Height="40" Foreground="#FF636363"/>
+
+    </Grid>
+
+</fw:AcrylicWindow>
